@@ -28,7 +28,8 @@ jobs:
 
       # Runs synapse workspace deployment
       - name: Synapse workspace deployment
-        uses: azure/synapse-workspace-deployment@release-1.0
+        uses: Azure/Synapse-workspace-deployment@V1.7.0
+
         with:
           TargetWorkspaceName: 'uat-051723'
           TemplateFile: './workspace051723/TemplateForWorkspace.json'
