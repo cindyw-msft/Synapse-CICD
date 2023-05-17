@@ -2,29 +2,23 @@ name: Deploy Synapse Workspace to UAT
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [workspace_publish]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  release:
-    # The type of runner that the job will run on
+  build:
     runs-on: windows-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Log in with Azure
-        uses: azure/login@v1
-        with:
-          creds: '${{ secrets.AZURE_CREDENTIALS }}'
+#       - name: Log in with Azure
+#         uses: azure/login@v1
+#         with:
+#           creds: '${{ secrets.AZURE_CREDENTIALS }}'
 
       # Runs synapse workspace deployment
       - name: Synapse workspace deployment
@@ -40,5 +34,3 @@ jobs:
           clientSecret: '${{ secrets.CLIENT_SECRET }}'
           subscriptionId: '${{ secrets.SUBSCRIPTION_ID }}'
           tenantId: '${{ secrets.TENANT_ID }}'
-          DeleteArtifactsNotInTemplate: 'true'
-          managedIdentity: 'False'
