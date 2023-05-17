@@ -13,20 +13,20 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       # Runs synapse workspace deployment
       - name: Synapse workspace deployment
-        uses: Azure/Synapse-workspace-deployment@V1.7.0
-
+        uses: azure/synapse-workspace-deployment@release-1.0
         with:
           TargetWorkspaceName: 'uat-051723'
           TemplateFile: './workspace051723/TemplateForWorkspace.json'
           ParametersFile: './workspace051723/TemplateParametersForWorkspace.json'
           environment: 'Azure Public'
           resourceGroup: 'synapse-cicd'
-          clientId: '${{ secrets.CLIENT_ID }}'
-          clientSecret: '${{ secrets.CLIENT_SECRET }}'
-          subscriptionId: '${{ secrets.SUBSCRIPTION_ID }}'
-          tenantId: '${{ secrets.TENANT_ID }}'
-          operation: 'validateDeploy'
+          clientId: ${{secrets.CLIENT_ID}}
+          clientSecret: ${{secrets.CLIENT_SECRET}}
+          subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}
+          tenantId: ${{ secrets.TENANT_ID }}
+          DeleteArtifactsNotInTemplate: 'true'
+          managedIdentity: 'False'
