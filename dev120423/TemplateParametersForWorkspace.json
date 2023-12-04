@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "dev120423"
+		},
+		"dev120423-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:dev120423.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"workspace051723-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:workspace051723.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"dev120423-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://dls120423.dfs.core.windows.net"
+		},
+		"workspace051723-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://lake051723.dfs.core.windows.net"
+		}
+	}
+}
