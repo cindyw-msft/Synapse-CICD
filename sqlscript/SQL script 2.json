@@ -2,7 +2,7 @@
 	"name": "SQL script 2",
 	"properties": {
 		"content": {
-			"query": "-- some text",
+			"query": "-- some more text",
 			"metadata": {
 				"language": "sql"
 			},
