@@ -2,8 +2,8 @@ name: Deploy Synapse Workspace
 
 # Controls when the workflow will run
 on:
-  push:
-    branches: [workspace_publish]
+  # push:
+  #   branches: [workspace_publish]
 
   workflow_dispatch:
 
