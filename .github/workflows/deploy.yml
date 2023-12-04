@@ -2,6 +2,8 @@ name: Deploy Synapse workspace in one branch
 
 # Controls when the workflow will run
 on:
+  push:
+    branches: [workspace_publish]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -25,9 +27,9 @@ jobs:
           # Provide the Synapse workspace name where you want to deploy the artifacts.
           TargetWorkspaceName: ${{ secrets.WORKSPACE }}
           # Specify the path to the workspace artifacts template.
-          TemplateFile: './TemplateForWorkspace.json'
+          TemplateFile: './dev120423/TemplateForWorkspace.json'
           # Specify the path to the template parameter file.
-          ParametersFile: './TemplateParametersForWorkspace.json'
+          ParametersFile: './dev120423/TemplateParametersForWorkspace.json'
           # Delete the artifacts which are in the workspace but not in the template.
           DeleteArtifactsNotInTemplate: true # optional
           # Provide the type of cloud environment. Valid values are: Azure Public, Azure China, Azure US Government, Azure Germany
