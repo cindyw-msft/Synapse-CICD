@@ -45,4 +45,4 @@ jobs:
           # Provide tenant id.
           tenantId: ${{ secrets.TENANTID }} # optional
           # Provide name of the operation.
-          operation: 'validateDeploy'
+          operation: 'deploy'
