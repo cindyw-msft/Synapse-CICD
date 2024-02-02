@@ -9,6 +9,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  # This workflow contains a single job called "build"
   deploy-to-uat:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -26,9 +27,9 @@ jobs:
           # Provide the Synapse workspace name where you want to deploy the artifacts.
           TargetWorkspaceName: ${{ secrets.WORKSPACE }}
           # Specify the path to the workspace artifacts template.
-          TemplateFile: './TemplateForWorkspace.json'
+          TemplateFile: './dev120423/TemplateForWorkspace.json'
           # Specify the path to the template parameter file.
-          ParametersFile: './TemplateParametersForWorkspace.json'
+          ParametersFile: './dev120423/TemplateParametersForWorkspace.json'
           # Delete the artifacts which are in the workspace but not in the template.
           DeleteArtifactsNotInTemplate: true # optional
           # Provide the type of cloud environment. Valid values are: Azure Public, Azure China, Azure US Government, Azure Germany
@@ -64,9 +65,9 @@ jobs:
           # Provide the Synapse workspace name where you want to deploy the artifacts.
           TargetWorkspaceName: ${{ secrets.WORKSPACE }}
           # Specify the path to the workspace artifacts template.
-          TemplateFile: './TemplateForWorkspace.json'
+          TemplateFile: './dev120423/TemplateForWorkspace.json'
           # Specify the path to the template parameter file.
-          ParametersFile: './TemplateParametersForWorkspace.json'
+          ParametersFile: './dev120423/TemplateParametersForWorkspace.json'
           # Delete the artifacts which are in the workspace but not in the template.
           DeleteArtifactsNotInTemplate: true # optional
           # Provide the type of cloud environment. Valid values are: Azure Public, Azure China, Azure US Government, Azure Germany
